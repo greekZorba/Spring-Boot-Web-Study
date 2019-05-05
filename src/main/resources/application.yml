@@ -1,0 +1,58 @@
+# h2 메모리 DB를 사용하기 위한 설정 - 접속 url: http://localhost:8080/h2-console
+datasource:url: jdbc:h2:mem:testdb
+
+spring:
+  h2:
+    console:
+      enabled: true
+  #          path: /h2-test
+  security:
+    oauth2:
+      client:
+        registration:
+          google:
+            client-id: 584371942412-7g01rtlav2ampqa1j3e7fdcgldqsf3pa.apps.googleusercontent.com
+            client-secret: pKCyvn2SjmYDISZFMMCRK_oo
+          facebook:
+            client-id: 257783934872343
+            client-secret: 00561670ef5bd9b3c3b97d7142927934
+
+
+devtools:livereload:enabled: true
+
+#facebook:
+#  client:
+#    clientId : 257783934872343
+#    clientSecret: 00561670ef5bd9b3c3b97d7142927934
+#    accessTokenUri: https://graph.facebook.com/oauth/access_token
+#    userAuthorizationUri: https://www.facebook.com/dialog/oauth?display=popup
+#    tokenName: oauth_token
+#    authenticationScheme: query
+#    clientAuthenticationScheme: form
+#    scope: email
+#  resource:
+#    userInfoUri: https://graph.facebook.com/me?fields=id,name,email,link
+#
+#google:
+#  client:
+#    clientId: 584371942412-7g01rtlav2ampqa1j3e7fdcgldqsf3pa.apps.googleusercontent.com
+#    clientSecret: pKCyvn2SjmYDISZFMMCRK_oo
+#    accessTokenUri: https://accounts.google.com/o/oauth2/token
+#    userAuthorizationUri: https://accounts.google.com/o/oauth2/auth
+#    scope: email, profile
+#  resource:
+#    userInfoUri: https://www.googleapis.com/oauth2/v2/userinfo
+
+
+custom:
+  oauth2:
+    kakao:
+      client-id: de3bd233fd00b91c4a3a23b8e0c7b16e
+
+#kakao:
+#  client:
+#    clientId: de3bd233fd00b91c4a3a23b8e0c7b16e
+#    accessTokenUri: https://kauth.kakao.com/oauth/token
+#    userAuthorizationUri: https://kauth.kakao.com/oauth/authorize
+#  resource:
+#    userInfoUri: https://kapi.kakao.com/v1/user/me
