@@ -17,17 +17,23 @@ public class BoardService {
     }
 
     public Page<Board> findBoardList(Pageable pageable){
-//        pageable = PageRequest.of(pageable.getPageNumber() <= 0 ? 0 : pageable
-//                .getPageNumber() - 1, pageable.getPageSize());
-        pageable = new PageRequest(pageable.getPageNumber() <= 0 ? 0 : pageable
+        // spring boot 2에서 실행
+        pageable = PageRequest.of(pageable.getPageNumber() <= 0 ? 0 : pageable
                 .getPageNumber() - 1, pageable.getPageSize());
+
+//        spring boot 1.5에서 실행
+//        pageable = new PageRequest(pageable.getPageNumber() <= 0 ? 0 : pageable
+//                .getPageNumber() - 1, pageable.getPageSize());
 
         return boardRepository.findAll(pageable);
     }
 
     public Board findBoardByIdx(Long idx){
-//        return boardRepository.findById(idx).orElse(new Board());
-        return boardRepository.getOne(idx);
+        // spring boot 2에서 실행
+        return boardRepository.findById(idx).orElse(new Board());
+
+//        spring boot 1.5에서 실행
+//        return boardRepository.getOne(idx);
     }
 
 

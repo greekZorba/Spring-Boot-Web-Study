@@ -23,6 +23,7 @@ repositories {
 }
 
 dependencies {
+    runtime('mysql:mysql-connector-java')
     compile('org.springframework.security:spring-security-oauth2-client')
     compile('org.springframework.security:spring-security-oauth2-jose')
     compile('org.springframework.boot:spring-boot-starter-security')
